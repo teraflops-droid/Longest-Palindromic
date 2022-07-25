@@ -3,17 +3,22 @@ import java.util.ArrayList;
 
 class Playground {
 
-    public static ArrayList<String> longest(ArrayList<String> palindrome){
-        ArrayList<String> temp = new ArrayList<>();
-        for (int i = 0; i < palindrome.size(); i++) {
-            String data = palindrome.get(i).toString();
+    public static String getLongestString(ArrayList<String> palindrome) {
+        int maxLength = 0;
+        String longestString = null;
+        for (String s : palindrome) {
+          if (s.length() > maxLength) {
+            maxLength = s.length();
+            longestString = s;
+          }
         }
-        return palindrome;
-    }
+        return longestString;
+      }
+     
 
     public static void main(String[ ] args) {
 
-        String input = "forgeeksskeegfor";
+        String input = "cbbd";
         ArrayList<String> palindrome = new ArrayList<String>();
         for (int i = 0; i < input.length(); i++) {
             StringBuilder normal = new StringBuilder();
@@ -43,6 +48,6 @@ class Playground {
             }
         }
         System.out.println(palindrome);
-        System.out.println("Longest palindrome: " + longest(palindrome));
+        System.out.println("Longest palindrome: " + getLongestString(palindrome));
     }
 }
