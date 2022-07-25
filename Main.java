@@ -4,7 +4,6 @@ import java.util.ArrayList;
 class Palindromic {
 
     public static void main(String[ ] args) {
-
         String input = "babad";
         ArrayList<String> palindrome = new ArrayList<String>();
         for (int i = 0; i < input.length(); i++) {
